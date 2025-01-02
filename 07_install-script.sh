@@ -10,23 +10,53 @@ else
     echo "user has the required permission to run the script, excuting script now"
 fi 
 
-#install mysql rpm
-dnf install mysql -y
 
-if [ $? -eq 0 ]; then
-    echo "mysql install.. SUCCESS"
+#check if mysql is installed or not
+dnf list installed mysql
+
+if [ $? -ne 0 ]; then
+    dnf install mysql -y #install mysql
+    if [ $? -eq 0 ]; then
+        echo "mysql install.. SUCCESS"
+    else
+        echo "mysql install.. FAILURE"
+        exit 1
+    fi
 else
-    echo "mysql install.. FAILURE"
-    exit 1
+    echo "Mysql already installed"
 fi
 
-#install git
-dnf install git -y
+#check if git is installed or not
+dnf list installed git
 
-if [ $? -eq 0 ]; then
-    echo "git install.. SUCCESS"
+if [ $? -ne 0 ]; then
+    dnf install git -y #install git
+    if [ $? -eq 0 ]; then
+        echo "mysql install.. SUCCESS"
+    else
+        echo "mysql install.. FAILURE"
+        exit 1
+    fi
 else
-    echo "git install.. FAILURE"
-    exit 1
+    echo "Mysql already installed"
 fi
+
+
+
+# if [ $? -eq 0 ]; then
+#     echo "mysql install.. SUCCESS"
+# else
+#     echo "mysql install.. FAILURE"
+#     exit 1
+# fi
+
+# #install git
+# dnf install git -y
+
+# if [ $? -eq 0 ]; then
+#     echo "git install.. SUCCESS"
+# else
+#     echo "git install.. FAILURE"
+#     exit 1
+# fi
 
