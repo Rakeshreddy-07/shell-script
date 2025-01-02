@@ -20,7 +20,12 @@ else
 fi
 
 #install git
-dnf install git -y
+dnf install gitd -y
 
-
+if [ $? -eq 0 ]; then
+    echo "git install.. SUCCESS"
+else
+    echo "git install.. FAILURE"
+    exit 1
+fi
 
