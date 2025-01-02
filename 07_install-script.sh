@@ -20,7 +20,7 @@ else
 fi
 
 #install git
-dnf install gitd -y
+dnf install git -y
 
 if [ $? -eq 0 ]; then
     echo "git install.. SUCCESS"
