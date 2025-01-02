@@ -8,4 +8,4 @@ timestamp=$(date +%H:%M:%S)
 c=$(( $a + $b ))
 
 echo "script executed at $timestamp"
-echo "Value a plus value b is: $c"
+echo "Sum of a and b is: $c"
