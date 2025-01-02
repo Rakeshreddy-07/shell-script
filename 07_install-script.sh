@@ -10,7 +10,7 @@ else
 fi 
 
 #install mysql rpm
-dnf install mysqla -y
+dnf install mysql -y
 
 if [ $? -eq 0 ]; then
     echo "mysql install.. SUCCESS"
