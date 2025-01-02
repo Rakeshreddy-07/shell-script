@@ -2,7 +2,7 @@
 
 a=$1
 b=$2
-timestamp=$(date +%H:%M:%S)
+timestamp=$(date +%m/%d/%y-%H:%M:%S)
 
 
 c=$(( $a + $b ))
