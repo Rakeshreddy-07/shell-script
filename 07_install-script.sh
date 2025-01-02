@@ -38,7 +38,7 @@ if [ $? -ne 0 ]; then
         exit 1
     fi
 else
-    echo "Mysql already installed"
+    echo "git is already installed"
 fi
 
 
