@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #colors
-R="e\[31m"
-G="e\[32m"
-Y="e\[33m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
 
 #check user id sudo access to run the script
 CHECK_ROOT(){
