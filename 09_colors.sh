@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#colors
+R="e\[31m"
+G="e\[32m"
+Y="e\[33m"
 
 #check user id sudo access to run the script
 CHECK_ROOT(){
@@ -15,9 +19,9 @@ uid=$(id -u)
 #To validate the install process
 VALIDATE () {
     if [ $1 -eq 0 ]; then
-        echo "$2.. SUCCESS"
+        echo -e "$2.. $G SUCCESS $N"
     else
-        echo "$2.. FAILURE"
+        echo -e "$2.. $R FAILURE $N"
         exit 1
     fi    
 }
@@ -32,7 +36,7 @@ if [ $? -ne 0 ]; then
     dnf install mysql -y #install mysql
     VALIDATE $? "Installing mysql"
 else
-    echo "Mysql already installed"
+    echo -e "Mysql already $Y installed"
 fi
 
 #check if git is installed or not
@@ -42,5 +46,5 @@ if [ $? -ne 0 ]; then
     dnf install git -y #install git
     VALIDATE $? "Installing Git"
 else
-    echo "git is already installed"
+    echo "git is already $Y installed"
 fi
