@@ -9,6 +9,8 @@ timestamp=(date +%Y-%M-%D_%h:%m:%s)
 log_location="/var/log/expense"
 log_file_name="$log_location/expense_$timestamp.log"
 
+mkdir -p /var/log/expense
+
 #check user id sudo access to run the script
 CHECK_ROOT(){
 uid=$(id -u)
