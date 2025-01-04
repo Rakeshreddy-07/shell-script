@@ -5,11 +5,14 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 
-timestamp=$(date +%Y-%M-%D_%h:%m:%s)
-log_location="/var/log/expense"
-log_file_name="$log_location/expense_$timestamp.log"
+timestamp=$(date +%Y-%m-%d-%H:%M:%S)
+log_location="/var/log/shellscript_logs"
+log_file=$(echo $0 | cut -d "." -f1)
+log_file_name="$log_location/$log_file_$timestamp.log"
 
-mkdir -p /var/log/expense
+
+
+mkdir -p /var/log/shellscript_logs
 
 #check user id sudo access to run the script
 CHECK_ROOT(){
@@ -36,22 +39,22 @@ VALIDATE () {
 CHECK_ROOT
 
 #check if mysql is installed or not
-dnf list installed mysql >> $log_file_name
+dnf list installed mysql &>> $log_file_name
 
 #install mysql 
 if [ $? -ne 0 ]; then
-    dnf install mysql -y >> $log_file_name 
+    dnf install mysql -y &>> $log_file_name 
     VALIDATE $? "Installing mysql"
 else
     echo -e "Mysql already $Y installed $N"
 fi
 
 #check if git is installed or not
-dnf list installed git >> $log_file_name
+dnf list installed git &>> $log_file_name
 
 #install git
 if [ $? -ne 0 ]; then
-    dnf install git -y >> $log_file_name
+    dnf install git -y &>> $log_file_name
     VALIDATE $? "Installing Git"
 else
     echo -e "git is already $Y installed $N"
