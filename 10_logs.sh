@@ -4,6 +4,7 @@
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
+N="\e[0m"
 
 timestamp=$(date +%Y-%m-%d-%H:%M:%S)
 log_location="/var/log/shellscript_logs"
