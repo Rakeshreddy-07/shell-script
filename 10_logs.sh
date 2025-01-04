@@ -5,7 +5,7 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 
-timestamp=(date +%Y-%M-%D_%h:%m:%s)
+timestamp=$((date +%Y-%M-%D_%h:%m:%s))
 log_location="/var/log/expense"
 log_file_name="$log_location/expense_$timestamp.log"
 
