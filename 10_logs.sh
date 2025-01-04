@@ -8,7 +8,7 @@ Y="\e[33m"
 timestamp=$(date +%Y-%m-%d-%H:%M:%S)
 log_location="/var/log/shellscript_logs"
 log_file=$(echo $0 | cut -d "." -f1)
-log_file_name="$log_location/$log_file_$timestamp.log"
+log_file_name="$log_location/$log_file-$timestamp.log"
 
 
 
