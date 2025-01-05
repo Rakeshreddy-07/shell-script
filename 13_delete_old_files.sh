@@ -41,9 +41,9 @@ VALIDATE () {
 #calling this function to check if sudo access is enabled or not
 CHECK_ROOT
 
-find $log_location -name "*.log" -mtime +30 >> $HOME/$log_file.txt
+find $log_location -name "*.log" -mtime +30 >> "$HOME/$log_file.txt"
 
 while read -r filename 
 do
     ls $filename
-done << $HOME/$log_file.txt
+done << "$HOME/$log_file.txt"
