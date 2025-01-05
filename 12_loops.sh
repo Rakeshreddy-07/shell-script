@@ -33,7 +33,7 @@ CHECK_ROOT
 for package in $@
 do
     dnf list installed $package
-    if [ $? -eq 0 ]; then
+    if [ $? -ne 0 ]; then
         dnf install $package -y
         #VALIDATE $? "$package installation"
     else
