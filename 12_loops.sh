@@ -6,6 +6,17 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+#log file location
+timestamp=$(date +%Y-%m-%d-%H:%M:%S)
+log_location="/var/log/shellscript_logs"
+log_file=$(echo $0 | cut -d "." -f1)
+log_file_name="$log_location/$log_file-$timestamp.log"
+
+
+
+mkdir -p /var/log/shellscript_logs
+
+
 #check user id sudo access to run the script
 CHECK_ROOT(){
 uid=$(id -u)
@@ -32,9 +43,9 @@ CHECK_ROOT
 
 for package in $@
 do
-    dnf list installed $package
+    dnf list installed $package &>> $log_file_name
     if [ $? -ne 0 ]; then
-        dnf install $package -y
+        dnf install $package -y &>> $log_file_name
         VALIDATE $? "$package installation"
     else
         echo -e "$package already $Y installed $N"
