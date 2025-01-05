@@ -20,9 +20,9 @@ uid=$(id -u)
 #To validate the install process
 VALIDATE () {
     if [ $1 -eq 0 ]; then
-        echo "$2.. SUCCESS"
+        echo "$2.. SUCCESS $N"
     else
-        echo "$2.. FAILURE"
+        echo "$2.. FAILURE $N"
         exit 1
     fi    
 }
@@ -35,8 +35,8 @@ do
     dnf list installed $package
     if [ $? -ne 0 ]; then
         dnf install $package -y
-        #VALIDATE $? "$package installation"
+        VALIDATE $? "$package installation"
     else
-        echo -e "$package already $Y installed"
+        echo -e "$package already $Y installed $N"
     fi
 done
