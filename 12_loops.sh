@@ -31,9 +31,9 @@ uid=$(id -u)
 #To validate the install process
 VALIDATE () {
     if [ $1 -eq 0 ]; then
-        echo "$2.. SUCCESS $N"
+        echo "$2.. $G SUCCESS $N"
     else
-        echo "$2.. FAILURE $N"
+        echo "$2.. $R FAILURE $N"
         exit 1
     fi    
 }
