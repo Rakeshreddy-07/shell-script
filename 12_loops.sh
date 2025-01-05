@@ -35,7 +35,7 @@ do
     dnf list installed $package
     if [ $? -eq 0 ]; then
         dnf install $package -y
-        VALIDATE $? "Mysql installation"
+        VALIDATE $? "$package installation"
     else
         echo -e "$package already $Y installed"
     fi
