@@ -43,7 +43,7 @@ CHECK_ROOT
 
 find $log_location -name "*.log" -mtime +30 >> "$HOME/$log_file.txt"
 
-while read -r filename 
-do
-    ls $filename
-done << "$HOME/$log_file.txt"
+# while read -r filename 
+# do
+#     ls $filename
+# done <<< "$HOME/$log_file.txt"
