@@ -45,7 +45,7 @@ find $log_location -name "*.log" -mtime +30 &>> /home/ec2-user/$log_file.txt
 
 filename=/home/ec2-user/$log_file.txt
 
- while read -r logname 
+ while read -r file 
  do
-     echo "$logname"
- done <<< $filename
+     echo "file to be deleted: $file"
+ done < $filename
