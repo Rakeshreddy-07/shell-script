@@ -45,7 +45,7 @@ find $log_location -name "*.log" -mtime +30 &>> /home/ec2-user/$log_file.txt
 
 filename=/home/ec2-user/$log_file.txt
 
- while read -r filename 
+ while read -r logname 
  do
-     ls "$filename"
+     ls "$logname"
  done <<< $filename
