@@ -2,9 +2,9 @@
 
 #colors
 R="\e[31m"
-G="\033[0;32m"
+G="\e[32m"
 Y="\e[33m"
-N="\033[1;37m"
+N="\e[0m"
 
 #log file location
 timestamp=$(date +%Y-%m-%d-%H:%M:%S)
