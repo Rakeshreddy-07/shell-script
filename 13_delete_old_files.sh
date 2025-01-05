@@ -47,5 +47,5 @@ filename=/home/ec2-user/$log_file.txt
 
  while read -r file 
  do
-     echo "file to be deleted: $file"
+     ls $file
  done < $filename
