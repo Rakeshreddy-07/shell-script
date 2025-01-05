@@ -47,5 +47,5 @@ filename=/home/ec2-user/$log_file.txt
 
  while read -r logname 
  do
-     ls "$logname"
+     echo "$logname"
  done <<< $filename
