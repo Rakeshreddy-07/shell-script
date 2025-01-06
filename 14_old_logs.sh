@@ -39,3 +39,7 @@ if [ ! -d $dest_dir ]; then
 else    
     echo "$dest_dir exists"
 fi
+
+#if [ -d $source_dir ]; then
+    find $source_dir -name "*.log" -mtime +14
+#else 
