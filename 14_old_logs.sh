@@ -27,23 +27,15 @@ else
 fi
 
 #validating the directories
-validate() {
-    if [ ! -d $@ ]; then
-    echo "Directory does not exists"
+
+if [ ! -d $source_dir ]; then
+    echo "$source_dir does not exists"
 else    
-    echo "Directory exists"
+    echo "$source_dir exists"
 fi
-}
 
-validate $source_dir $dest_dir
-# if [ ! -d $1 ]; then
-#     echo "$source_dir does not exists"
-# else    
-#     echo "$source_dir exists"
-# fi
-
-# if [ ! -d $dest_dir ]; then
-#     echo "$dest_dir does not exists"
-# else    
-#     echo "$dest_dir exists"
-# fi
+if [ ! -d $dest_dir ]; then
+    echo "$dest_dir does not exists"
+else    
+    echo "$dest_dir exists"
+fi
