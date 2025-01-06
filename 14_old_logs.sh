@@ -46,7 +46,7 @@ files=$(find $source_dir -name "*.log" -mtime +$days)
 if [ -n "$files" ]; then
     echo "files are: $files"
     echo "Zipping files"
-    zip_file="$dest_dir/$log_file_$timestamp.zip"
+    zip_file="$dest_dir/$log_file-$timestamp.zip"
     find $source_dir -name "*.log" -mtime +$days | zip -@ $zip_file   
 else
     echo "no files fould older than $days"
