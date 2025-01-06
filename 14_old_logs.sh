@@ -40,5 +40,6 @@ else
     echo "$dest_dir exists"
 fi
 
-find $source_dir -name "*.log" -mtime +14
+files=$(find $source_dir -name "*.log" -mtime +14)
 
+echo "files are: $files"
