@@ -39,13 +39,13 @@ fi
 echo "validating the directories"
 
 if [ ! -d $source_dir ]; then
-    echo "Directory does not exists"
+    echo "$source_dir does not exists"
 else    
     echo "$source_dir exists"
 fi
 
 if [ ! -d $dest_dir ]; then
-    echo "Directory does not exists"
+    echo "$dest_dir does not exists"
 else    
-    echo "$sdest_dir exists"
+    echo "$dest_dir exists"
 fi
