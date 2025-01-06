@@ -27,7 +27,7 @@ else
 fi
 
 #validating the directories
-validate(){
+validate() {
     if [ ! -d $@ ]; then
     echo "Directory does not exists"
 else    
