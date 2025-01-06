@@ -30,7 +30,8 @@ uid=$(id -u)
 }
 
 if [ $# -lt 2 ]; then
-    echo -e "$R USAGE: $@ <source_directory> <destination_directory>"
+    echo -e "$R USAGE: $0 <source_directory> <destination_directory> $N "
+    exit 1
 else
     echo "executing the script"
 fi
