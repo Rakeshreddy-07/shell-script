@@ -47,7 +47,12 @@ if [ -n "$files" ]; then
     echo "files are: $files"
     echo "Zipping files"
     zip_file="$dest_dir/$log_file-$timestamp.zip"
-    find $source_dir -name "*.log" -mtime +$days | zip -@ $zip_file   
+    find $source_dir -name "*.log" -mtime +$days | zip -@ $zip_file
+    if [ $? -eq 0]; then 
+        echo "removing: $files"
+    else
+        echo "zip is unseccessfull"
+    fi   
 else
     echo "no files fould older than $days"
 fi
