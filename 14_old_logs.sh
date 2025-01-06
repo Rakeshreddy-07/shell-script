@@ -7,7 +7,7 @@ Y="\e[33m"
 N="\e[0m"
 
 #log file location
-timestamp=$(date +%Y-%m-%d-%H:%M:%S)
+timestamp=$(date +%Y-%m-%d-%H-%M-%S)
 log_location="/var/log/expense_logs"
 log_file=$(echo $0 | cut -d "." -f1)
 log_file_name="$log_location/$log_file-$timestamp.log"
@@ -46,7 +46,7 @@ files=$(find $source_dir -name "*.log" -mtime +$days)
 if [ -n "$files" ]; then
     echo "files are: $files"
     echo "Zipping files"
-    zip_file=$($dest_dir/old_logs_$timestamp.zip)
+    zip_file="$dest_dir/$log_file_$timestamp.zip"
     find $source_dir -name "*.log" -mtime +$days | zip -@ $zip_file   
 else
     echo "no files fould older than $days"
