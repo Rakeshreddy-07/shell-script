@@ -40,8 +40,7 @@ else
     echo "$dest_dir exists"
 fi
 
-files=$(find $source_dir -name "*.log" -mtime +$days)
-
+files=$(find $source_dir -name "*.log" -mtime +400)
 
 
 if [ -n "$files" ]; then
