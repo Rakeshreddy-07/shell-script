@@ -10,7 +10,7 @@ threshold=5
 
 while read -r line
 do
-    usage=$( echo $line | awk -F " " '{ print $6f }' )
+    usage=$( echo $line | awk -F " " '{ print $6f }' | cut -d "%" -f 1 )
 done <<< $disk
 
 echo $usage
