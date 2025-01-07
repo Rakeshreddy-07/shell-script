@@ -10,5 +10,7 @@ disk=$(df -hT | grep -i xfs)
 
 while read -r line
 do
-    echo $line
+    usage=$(echo $line | awk -F " " {print 6f})
 done <<< $disk
+
+echo $usage
