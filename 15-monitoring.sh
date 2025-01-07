@@ -7,3 +7,8 @@
 disk=$(df -hT)
 
 echo $disk
+
+while read -r line
+do
+    echo $line
+done <<< $disk
