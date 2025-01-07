@@ -6,7 +6,7 @@
 
 disk=$(df -hT)
 
-echo $disk
+#echo $disk
 
 while read -r line
 do
