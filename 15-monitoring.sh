@@ -12,8 +12,5 @@ while read -r line
 do
     usage=$( echo $line | awk -F " " '{ print $6f }' | cut -d "%" -f 1 )
     partition=$( echo $line | awk -F " " '{ print $Nf }' )
-
+    echo "Partition: $partition Usage: $usage"
 done <<< $disk
-
-echo $usage
-echo $partition
