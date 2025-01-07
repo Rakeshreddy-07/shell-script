@@ -14,3 +14,7 @@ do
     partition=$(echo $line | awk -F " " '{ print $7f }')
     echo "Partition: $partition Usage: $usage"
 done <<< $disk
+
+if [ $usage -gt 5 ]; then
+    echo "Partition: $partition Usage: $usage"
+fi
