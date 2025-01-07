@@ -14,7 +14,7 @@ do
     partition=$(echo $line | awk -F " " '{ print $7f }')
     #echo "Partition: $partition Usage: $usage"
     if [ $usage -gt 5 ]; then
-        echo "Partition: $partition Usage: $usage"
+        echo "Partition: $partition Usage: $usage" | mutt -s "message" rakeshreddynarra07@gmail.com
     fi
 done <<< $disk
 
