@@ -4,7 +4,7 @@
 
 #echo $USAGE
 
-disk=$(df -hT)
+disk=$(df -hT | grep -i xfs)
 
 #echo $disk
 
